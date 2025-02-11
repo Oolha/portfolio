@@ -7,6 +7,7 @@ import Tools from "../../components/Tools/Tools";
 import Projects from "../../components/Projects/Projects";
 import Contact from "../../components/Contact/Contact";
 import styles from "./HomePage.module.css";
+import { Layout } from "../../components/Layout/Layout";
 
 const HomePage = () => {
   const location = useLocation();
@@ -21,56 +22,57 @@ const HomePage = () => {
   }, [location]);
 
   return (
-    <main className={styles.container}>
+    <main className={styles.main}>
       <motion.div
         className={styles.progressBar}
         style={{ scaleX: scrollYProgress }}
       />
       <Navigation />
+      <Layout>
+        <motion.section
+          id="about"
+          className={styles.section}
+          style={{
+            opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]),
+            scale: useTransform(scrollYProgress, [0, 0.25], [1, 0.8]),
+          }}
+        >
+          <About />
+        </motion.section>
 
-      <motion.section
-        id="about"
-        className={styles.section}
-        style={{
-          opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]),
-          scale: useTransform(scrollYProgress, [0, 0.25], [1, 0.8]),
-        }}
-      >
-        <About />
-      </motion.section>
+        <motion.section
+          id="tools"
+          className={styles.section}
+          style={{
+            opacity: useTransform(scrollYProgress, [0.25, 0.5], [0, 1]),
+            scale: useTransform(scrollYProgress, [0.25, 0.5], [0.8, 1]),
+          }}
+        >
+          <Tools />
+        </motion.section>
 
-      <motion.section
-        id="tools"
-        className={styles.section}
-        style={{
-          opacity: useTransform(scrollYProgress, [0.25, 0.5], [0, 1]),
-          scale: useTransform(scrollYProgress, [0.25, 0.5], [0.8, 1]),
-        }}
-      >
-        <Tools />
-      </motion.section>
+        <motion.section
+          id="projects"
+          className={styles.section}
+          style={{
+            opacity: useTransform(scrollYProgress, [0.5, 0.75], [0, 1]),
+            scale: useTransform(scrollYProgress, [0.5, 0.75], [0.8, 1]),
+          }}
+        >
+          <Projects />
+        </motion.section>
 
-      <motion.section
-        id="projects"
-        className={styles.section}
-        style={{
-          opacity: useTransform(scrollYProgress, [0.5, 0.75], [0, 1]),
-          scale: useTransform(scrollYProgress, [0.5, 0.75], [0.8, 1]),
-        }}
-      >
-        <Projects />
-      </motion.section>
-
-      <motion.section
-        id="contact"
-        className={styles.section}
-        style={{
-          opacity: useTransform(scrollYProgress, [0.75, 1], [0, 1]),
-          scale: useTransform(scrollYProgress, [0.75, 1], [0.8, 1]),
-        }}
-      >
-        <Contact />
-      </motion.section>
+        <motion.section
+          id="contact"
+          className={styles.section}
+          style={{
+            opacity: useTransform(scrollYProgress, [0.75, 1], [0, 1]),
+            scale: useTransform(scrollYProgress, [0.75, 1], [0.8, 1]),
+          }}
+        >
+          <Contact />
+        </motion.section>
+      </Layout>
     </main>
   );
 };

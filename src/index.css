@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,5 +7,20 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #fafafa;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #141414;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsla(162, 77%, 40%, 0.2) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsla(218, 39%, 11%, 0.4) 0, transparent 55%),
+    radial-gradient(at 23% 75%, hsla(262, 77%, 40%, 0.2) 0, transparent 50%);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
