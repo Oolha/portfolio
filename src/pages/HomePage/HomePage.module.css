@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 2rem;
+  scroll-margin-top: 80px;
+}
+
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #1976d2;
+  transform-origin: 0%;
+  z-index: 1001;
+}
