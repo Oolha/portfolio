@@ -42,11 +42,11 @@ export const techStack: StackCategory[] = [
     tools: [
       { name: "ReactJS", icon: createIcon(SiReact, "reactIcon") },
       { name: "Redux", icon: createIcon(SiRedux, "reduxIcon") },
+      { name: "React Query", icon: createIcon(SiReactquery, "reactQueryIcon") },
       { name: "Next.js", icon: createIcon(SiNextdotjs, "nextIcon") },
       { name: "Node.js", icon: createIcon(SiNodedotjs, "nodeIcon") },
       { name: "Express.js", icon: createIcon(SiExpress, "expressIcon") },
       { name: "Tailwind CSS", icon: createIcon(SiTailwindcss, "tailwindIcon") },
-      { name: "React Query", icon: createIcon(SiReactquery, "reactQueryIcon") },
       { name: "Material UI", icon: createIcon(SiMui, "muiIcon") },
       { name: "Framer Motion", icon: createIcon(SiFramer, "framerIcon") },
     ],

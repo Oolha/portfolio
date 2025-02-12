@@ -13,11 +13,6 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.87);
   letter-spacing: -0.02em;
-  background: linear-gradient(
-    to right,
-    hsla(162, 77%, 40%, 1),
-    hsla(262, 77%, 40%, 1)
-  );
 }
 
 .stackContainer {
@@ -42,12 +37,13 @@
 
 .categoryTitle {
   font-family: "DM Sans", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.87);
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
 }
 
 .toolsGrid {
