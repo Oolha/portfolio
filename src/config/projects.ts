@@ -5,28 +5,11 @@ export const projects: Project[] = [
     id: "project-1",
     title: "VR Store",
     description:
-      "VR Store - A full-stack e-commerce platform for virtual reality headsets and games. Built an immersive shopping experience featuring user authentication, product catalog with advanced filtering, wishlist functionality, and a seamless checkout process. The application includes a responsive UI design and performance-optimized user experience.",
+      "A full-stack e-commerce platform for virtual reality headsets and games. Built an immersive shopping experience featuring user authentication, product catalog with advanced filtering, wishlist functionality, and a seamless checkout process. The application includes a responsive UI design and performance-optimized user experience.",
     image: "/images/vr-store.png",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "Redux Toolkit",
-      "MongoDB",
-    ],
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB"],
     liveLink: "https://virtual-headsets.vercel.app/",
     githubLink: "https://github.com/Oolha/virtual-headsets",
-  },
-  {
-    id: "project-2",
-    title: "TruScape",
-    description:
-      "A comprehensive CRM system for vendor management in food delivery operations. Developed an analytics dashboard for real-time business insights, including vendor performance tracking, promotional campaign management, and detailed sales analytics. ",
-    image: "/images/crm.png",
-    technologies: ["Next.js", "React Query", "TypeScript", "Tailwind CSS"],
-    liveLink: "https://crm-true-scape.vercel.app/",
-    githubLink: "https://github.com/Oolha/crm-trueScape",
   },
   {
     id: "project-2",

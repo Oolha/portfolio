@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Navigation from "../../components/Navigation/Navigation";
 import About from "../../components/About/About";
 import Tools from "../../components/Tools/Tools";
@@ -11,7 +11,6 @@ import { Layout } from "../../components/Layout/Layout";
 
 const HomePage = () => {
   const location = useLocation();
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const sectionId = location.pathname.slice(1) || "about";
@@ -21,21 +20,32 @@ const HomePage = () => {
     }
   }, [location]);
 
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <main className={styles.main}>
-      <motion.div
-        className={styles.progressBar}
-        style={{ scaleX: scrollYProgress }}
-      />
       <Navigation />
       <Layout>
         <motion.section
           id="about"
           className={styles.section}
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.25], [1, 0]),
-            scale: useTransform(scrollYProgress, [0, 0.25], [1, 0.8]),
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
         >
           <About />
         </motion.section>
@@ -43,10 +53,10 @@ const HomePage = () => {
         <motion.section
           id="tools"
           className={styles.section}
-          style={{
-            opacity: useTransform(scrollYProgress, [0.25, 0.5], [0, 1]),
-            scale: useTransform(scrollYProgress, [0.25, 0.5], [0.8, 1]),
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
         >
           <Tools />
         </motion.section>
@@ -54,10 +64,10 @@ const HomePage = () => {
         <motion.section
           id="projects"
           className={styles.section}
-          style={{
-            opacity: useTransform(scrollYProgress, [0.5, 0.75], [0, 1]),
-            scale: useTransform(scrollYProgress, [0.5, 0.75], [0.8, 1]),
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
         >
           <Projects />
         </motion.section>
@@ -65,10 +75,10 @@ const HomePage = () => {
         <motion.section
           id="contact"
           className={styles.section}
-          style={{
-            opacity: useTransform(scrollYProgress, [0.75, 1], [0, 1]),
-            scale: useTransform(scrollYProgress, [0.75, 1], [0.8, 1]),
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
         >
           <Contact />
         </motion.section>
