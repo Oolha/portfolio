@@ -8,6 +8,7 @@ import Projects from "../../components/Projects/Projects";
 import Contact from "../../components/Contact/Contact";
 import styles from "./HomePage.module.css";
 import { Layout } from "../../components/Layout/Layout";
+import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
   const location = useLocation();
@@ -83,6 +84,7 @@ const HomePage = () => {
           <Contact />
         </motion.section>
       </Layout>
+      <Footer />
     </main>
   );
 };

@@ -4,7 +4,7 @@
   z-index: 1000;
   background-color: rgba(20, 20, 20, 0.8);
   backdrop-filter: blur(8px);
-  padding: 1rem;
+  padding: 24px 32px;
   margin: auto;
 }
 
@@ -47,5 +47,10 @@
 @media (min-width: 768px) {
   .mobileNav {
     display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .nav {
+    padding: 24px 80px;
   }
 }

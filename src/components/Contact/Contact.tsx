@@ -34,7 +34,7 @@ function Contact() {
             whileHover={{ scale: 1.02 }}
           >
             <FiMail className={styles.icon} />
-            <span className={styles.linkText}>your.email@gmail.com</span>
+            <span className={styles.linkText}>olhaasydorchuk@gmail.com</span>
           </motion.div>
         </motion.a>
 

@@ -13,6 +13,7 @@ import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { projects } from "../../config/projects";
 import styles from "./Projects.module.css";
+import AnimatedEmoji from "../Emoji/Emoji";
 
 const Projects = () => {
   return (
@@ -35,6 +36,7 @@ const Projects = () => {
                 <CardMedia
                   component="img"
                   height="400"
+                  object-fit="fill"
                   image={project.image}
                   alt={project.title}
                   className={styles.cardMedia}
@@ -42,6 +44,12 @@ const Projects = () => {
 
                 <CardContent className={styles.cardContent}>
                   <Typography variant="h4" className={styles.projectTitle}>
+                    <AnimatedEmoji
+                      symbol="⚡"
+                      label="lightning"
+                      size={32}
+                      animation="pulse"
+                    />
                     {project.title}
                   </Typography>
 
