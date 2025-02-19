@@ -1,0 +1,136 @@
+.speedDial {
+  position: fixed;
+  bottom: 32px !important;
+  right: 32px !important;
+  z-index: 1000;
+}
+
+.speedDial :global(.MuiFab-primary) {
+  width: 56px;
+  height: 56px;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.speedDial :global(.MuiFab-primary:hover) {
+  background: none !important;
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.actionButton {
+  background-color: rgba(20, 20, 20, 0.8) !important;
+  color: #fff !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid hsla(162, 77%, 40%, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.actionButton:hover {
+  background-color: rgba(30, 30, 30, 0.9) !important;
+  border-color: hsla(162, 77%, 40%, 0.6) !important;
+  transform: scale(1.1);
+}
+
+.alert {
+  background-color: hsla(162, 77%, 40%, 0.9) !important;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .speedDial {
+    bottom: 24px !important;
+    right: 24px !important;
+  }
+
+  .speedDial :global(.MuiFab-primary),
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+  }
+  .actionButton {
+    min-height: 48px !important;
+    padding: 12px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .speedDial {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  .speedDial :global(.MuiFab-primary),
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .actionButton {
+    min-height: 40px !important;
+  }
+
+
+  .speedDial :global(.MuiSpeedDialAction-staticTooltipLabel) {
+    font-size: 14px;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .speedDial {
+    bottom: 12px !important;
+    right: 12px !important;
+  }
+
+  .speedDial :global(.MuiSpeedDial-actions) {
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .speedDial :global(.MuiSpeedDial-directionUp) {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .speedDial {
+    bottom: 12px !important;
+    right: 12px !important;
+  }
+  .speedDial :global(.MuiSpeedDial-actions) {
+    gap: 8px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .actionButton {
+    background-color: rgba(20, 20, 20, 0.9) !important;
+  }
+
+  .actionButton:hover {
+    background-color: rgba(30, 30, 30, 0.95) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actionButton {
+    transition: none !important;
+  }
+
+  .actionButton:hover {
+    transform: none;
+  }
+}

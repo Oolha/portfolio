@@ -9,6 +9,7 @@ import Contact from "../../components/Contact/Contact";
 import styles from "./HomePage.module.css";
 import { Layout } from "../../components/Layout/Layout";
 import Footer from "../../components/Footer/Footer";
+import CV from "../../components/CV/CV";
 
 const HomePage = () => {
   const location = useLocation();
@@ -84,6 +85,7 @@ const HomePage = () => {
           <Contact />
         </motion.section>
       </Layout>
+      <CV />
       <Footer />
     </main>
   );

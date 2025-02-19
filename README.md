@@ -20,8 +20,8 @@ Personal portfolio website built with React and Material-UI, showcasing my proje
 - Framer Motion
 - React Router
 - CSS Modules
+
 ## 🚀 Getting Started
 
 1. Clone the repository:
-```bash
-git clone https://github.com/Oolha/portfolio.git
+   git clone https://github.com/Oolha/portfolio.git
