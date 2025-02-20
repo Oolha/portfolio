@@ -36,6 +36,7 @@ const Projects = () => {
                 <CardMedia
                   component="img"
                   height="400"
+                  loading="lazy"
                   object-fit="fill"
                   image={project.image}
                   alt={project.title}

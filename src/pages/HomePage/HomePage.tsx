@@ -63,27 +63,8 @@ const HomePage = () => {
           <Tools />
         </motion.section>
 
-        <motion.section
-          id="projects"
-          className={styles.section}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={sectionVariants}
-        >
-          <Projects />
-        </motion.section>
-
-        <motion.section
-          id="contact"
-          className={styles.section}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={sectionVariants}
-        >
-          <Contact />
-        </motion.section>
+        <Projects />
+        <Contact />
       </Layout>
       <CV />
       <Footer />
