@@ -30,7 +30,7 @@ const CV = () => {
     }
   }, [isMobile, open]);
 
-  const fileId = "1BwD0SfliaKhMQaFFqeUTKbJswze5kBFd";
+  const fileId = "1EOU0pXbjvyvGZjbGEMPUEfoQhP8jvlnA";
 
   const handleViewCV = () => {
     const viewUrl = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
