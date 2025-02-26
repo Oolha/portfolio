@@ -15,9 +15,11 @@ const About = () => {
         </h1>
       </div>
       <p className={css.descriptionText}>
-        <span className={css.sftEng}>Software Engineer </span> with experience
-        in building web applications from scratch using React, TypeScript,
-        Node.js, and modern frontend technologies.
+        <span className={css.sftEng}>Frontend Developer </span> with experience
+        in scalable web apps using HTML5, CSS3, JS, React, TypeScript, and
+        Redux. Passionate about clean UI, responsive design, and state
+        management. Strong team player, collaborated with designers and backend
+        devs. Eager to learn and grow!
       </p>
       <SocialLinks />
     </div>

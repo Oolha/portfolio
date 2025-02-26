@@ -10,9 +10,11 @@ import styles from "./HomePage.module.css";
 import { Layout } from "../../components/Layout/Layout";
 import Footer from "../../components/Footer/Footer";
 import CV from "../../components/CV/CV";
+import { useScroll } from "../../hooks/useScroll";
 
 interface LocationState {
   isFirstVisit?: boolean;
+  scrollUpdate?: boolean;
 }
 
 const HomePage = () => {
@@ -20,30 +22,30 @@ const HomePage = () => {
   const { sectionId } = useParams();
   const locationState = location.state as LocationState;
   const isFirstVisit = locationState?.isFirstVisit;
+  const isScrollUpdate = locationState?.scrollUpdate;
+
+  const sectionIds = ["about", "tools", "projects", "contact"];
+
+  useScroll({ sectionIds, offset: 100 });
 
   useEffect(() => {
-    // Якщо перший візит або немає sectionId, скролимо до верху
     if (isFirstVisit || !sectionId) {
       window.scrollTo({ top: 0, behavior: "auto" });
       return;
     }
-
-    // Обробка навігації для інших випадків
+    if (isScrollUpdate) {
+      return;
+    }
     if (sectionId) {
       const element = document.getElementById(sectionId);
       if (element) {
-        // Для секції About завжди скролимо до самого верху
         if (sectionId === "about") {
           window.scrollTo({ top: 0, behavior: "smooth" });
           return;
         }
-
-        // Для інших секцій використовуємо більш плавний підхід
         const navElement = document.querySelector("nav");
         const navHeight = navElement ? navElement.clientHeight : 0;
 
-        // Використовуємо scrollIntoView з опцією block: "start"
-        // та додаємо CSS scroll-margin-top для елементів
         element.style.scrollMarginTop = `${navHeight + 20}px`;
         element.scrollIntoView({
           behavior: "smooth",
@@ -51,7 +53,8 @@ const HomePage = () => {
         });
       }
     }
-  }, [sectionId, location.key, isFirstVisit]);
+  }, [sectionId, location.key, isFirstVisit, isScrollUpdate]);
+
   const sectionVariants = {
     hidden: {
       opacity: 0,

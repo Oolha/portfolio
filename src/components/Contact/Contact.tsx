@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { RiTelegram2Fill } from "react-icons/ri";
 import styles from "./Contact.module.css";
 
 function Contact() {
@@ -52,6 +53,22 @@ function Contact() {
           >
             <FaWhatsapp className={styles.icon} />
             <span className={styles.linkText}>WhatsApp</span>
+          </motion.div>
+        </motion.a>
+
+        <motion.a
+          href="https://t.me/sydorchuuk"
+          className={styles.link}
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <motion.div
+            className={styles.contactItem}
+            whileHover={{ scale: 1.02 }}
+          >
+            <RiTelegram2Fill className={styles.icon} />
+            <span className={styles.linkText}>Telegram</span>
           </motion.div>
         </motion.a>
       </motion.div>

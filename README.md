@@ -7,7 +7,7 @@ Personal portfolio website built with React and Material-UI, showcasing my proje
 - Responsive design for all devices
 - Smooth scrolling navigation
 - Project showcase with live demos and GitHub links
-- Skills and tools section
+- Tools and projects section
 - Contact form
 - Animated UI elements
 - Dark theme with custom gradient background
