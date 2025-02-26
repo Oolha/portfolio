@@ -3,7 +3,7 @@ import { techStack } from "../../config/stack";
 
 const Tools = () => {
   return (
-    <div className={styles.container}>
+    <div id="tools" className={styles.container}>
       <h2 className={styles.title}>Skills & Tools</h2>
 
       <div className={styles.stackContainer}>

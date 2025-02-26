@@ -4,7 +4,7 @@ import css from "./About.module.css";
 
 const About = () => {
   return (
-    <div className={css.aboutContainer}>
+    <div id="about" className={css.aboutContainer}>
       <div className={css.introText}>
         <p className={css.text}>
           Hi there!

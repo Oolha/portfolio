@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { NavigationItem } from "../../types/navigation";
 
 export const navigationItems: NavigationItem[] = [
@@ -7,9 +8,17 @@ export const navigationItems: NavigationItem[] = [
   { label: "Contact", value: "contact" },
 ];
 
-export const handleNavigation = (value: string) => {
-  const element = document.getElementById(value);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
+export const useCustomNavigation = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (value: string) => {
+    navigate(`/${value}`);
+
+    const element = document.getElementById(value);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return { handleNavigation };
 };

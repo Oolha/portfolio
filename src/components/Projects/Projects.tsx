@@ -17,7 +17,7 @@ import AnimatedEmoji from "../Emoji/Emoji";
 
 const Projects = () => {
   return (
-    <div className={styles.container}>
+    <div id="projects" className={styles.container}>
       <Typography variant="h2" className={styles.title}>
         Projects
       </Typography>

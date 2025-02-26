@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navigation from "../../components/Navigation/Navigation";
 import About from "../../components/About/About";
@@ -11,17 +11,47 @@ import { Layout } from "../../components/Layout/Layout";
 import Footer from "../../components/Footer/Footer";
 import CV from "../../components/CV/CV";
 
+interface LocationState {
+  isFirstVisit?: boolean;
+}
+
 const HomePage = () => {
   const location = useLocation();
+  const { sectionId } = useParams();
+  const locationState = location.state as LocationState;
+  const isFirstVisit = locationState?.isFirstVisit;
 
   useEffect(() => {
-    const sectionId = location.pathname.slice(1) || "about";
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    // Якщо перший візит або немає sectionId, скролимо до верху
+    if (isFirstVisit || !sectionId) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
     }
-  }, [location]);
 
+    // Обробка навігації для інших випадків
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Для секції About завжди скролимо до самого верху
+        if (sectionId === "about") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          return;
+        }
+
+        // Для інших секцій використовуємо більш плавний підхід
+        const navElement = document.querySelector("nav");
+        const navHeight = navElement ? navElement.clientHeight : 0;
+
+        // Використовуємо scrollIntoView з опцією block: "start"
+        // та додаємо CSS scroll-margin-top для елементів
+        element.style.scrollMarginTop = `${navHeight + 20}px`;
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, [sectionId, location.key, isFirstVisit]);
   const sectionVariants = {
     hidden: {
       opacity: 0,
@@ -42,7 +72,6 @@ const HomePage = () => {
       <Navigation />
       <Layout>
         <motion.section
-          id="about"
           className={styles.section}
           initial="hidden"
           whileInView="visible"
@@ -53,7 +82,6 @@ const HomePage = () => {
         </motion.section>
 
         <motion.section
-          id="tools"
           className={styles.section}
           initial="hidden"
           whileInView="visible"

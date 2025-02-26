@@ -1,13 +1,14 @@
 import { useLocation } from "react-router-dom";
 import {
   navigationItems,
-  handleNavigation,
+  useCustomNavigation,
 } from "../NavigationBase/NavigationBase";
 import MobileNavigation from "../MobileNavigation/MobileNavigation";
 import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const location = useLocation();
+  const { handleNavigation } = useCustomNavigation();
 
   return (
     <>

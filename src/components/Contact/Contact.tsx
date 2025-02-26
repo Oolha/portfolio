@@ -6,6 +6,7 @@ import styles from "./Contact.module.css";
 function Contact() {
   return (
     <motion.div
+      id="contact"
       className={styles.container}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

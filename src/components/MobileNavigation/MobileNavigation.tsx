@@ -4,12 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "../Icon/Icon";
 import {
   navigationItems,
-  handleNavigation,
+  useCustomNavigation,
 } from "../NavigationBase/NavigationBase";
 import styles from "./MobileNavigation.module.css";
 
 const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { handleNavigation } = useCustomNavigation();
   const location = useLocation();
 
   const menuVariants = {
