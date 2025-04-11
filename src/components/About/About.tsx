@@ -18,9 +18,8 @@ const About = () => {
         <span className={css.sftEng}>Frontend Developer </span> specializing in
         React.js, Next.js and TypeScript with 1 year of practical experience
         building responsive SaaS and e-commerce applications. Familiar with REST
-        API development, SQL databases, and backend integration using Node.js
-        and Express.js. Quick learner who enjoys solving complex UI challenges
-        and optimizing web performance.
+        API development, NoSQL-Databases (MongoDB), and backend integration
+        using Node.js and Express.js.
       </p>
       <SocialLinks />
     </div>
